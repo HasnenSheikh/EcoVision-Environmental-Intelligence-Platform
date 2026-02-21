@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: ecovision
+    env: python
+    # 'standard' plan = 512 MB RAM — minimum needed for TensorFlow inference.
+    # Upgrade to 'pro' (2 GB) if you want to re-train models on the server.
+    plan: standard
+    buildCommand: bash build.sh
+    startCommand: gunicorn app:app --workers 1 --threads 4 --timeout 120
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true          # Render auto-generates a secure random value
+      - key: FLASK_ENV
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.11.9
+
+    # Persistent disk keeps SQLite DB and model files across deploys.
+    # Remove this block if you are on the free tier (no persistent disk).
+    disk:
+      name: ecovision-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1

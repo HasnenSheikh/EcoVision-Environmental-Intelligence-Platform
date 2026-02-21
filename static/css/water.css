@@ -1,0 +1,158 @@
+/* Water Management - Specific Styles */
+
+.water-container {
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Metrics Row - Horizontal Layout */
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Metric Cards */
+.metric-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.critical-bg {
+    background-color: #F8D7DA !important;
+    border-left: 4px solid var(--alert-red);
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-value-large {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.metric-subtext {
+    font-size: 0.875rem;
+    color: var(--alert-red);
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.danger-text {
+    color: #DC3545 !important;
+}
+
+/* Map Card */
+.map-card {
+    margin-bottom: 1.5rem;
+}
+
+.map-container {
+    height: 450px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+#waterFlowMap {
+    width: 100%;
+    height: 100%;
+}
+
+/* Chart Card */
+.chart-card {
+    margin-bottom: 1.5rem;
+}
+
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.chart-container {
+    position: relative;
+    height: 350px;
+    width: 100%;
+}
+
+/* Pulsing Marker Animation */
+@keyframes marker-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .metrics-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ─── Dark Mode Overrides ──────────────────────────────── */
+html[data-theme="dark"] .metric-card {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.45);
+}
+
+html[data-theme="dark"] .critical-bg {
+    background-color: rgba(220,53,69,0.15) !important;
+}
+
+html[data-theme="dark"] .safe-bg {
+    background-color: rgba(40,167,69,0.15) !important;
+}
+
+html[data-theme="dark"] .warning-bg {
+    background-color: rgba(255,193,7,0.12) !important;
+}
+
+@media (max-width: 768px) {
+    .water-container {
+        padding: 1rem;
+    }
+    
+    .chart-container {
+        height: 300px;
+    }
+    
+    .map-container {
+        height: 350px;
+    }
+    
+    .metrics-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}

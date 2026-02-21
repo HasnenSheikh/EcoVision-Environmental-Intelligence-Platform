@@ -1,0 +1,97 @@
+body {
+    background-color: #F8F9FA;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100vh;
+    background-color: #1A2530;
+    color: white;
+    position: fixed;
+    width: 260px;
+}
+
+.sidebar-brand {
+    padding: 24px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28A745;
+}
+
+.nav-link {
+    color: #A0AAB2;
+    padding: 12px 24px;
+    margin: 4px 16px;
+    border-radius: 8px;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #28A745;
+    color: white;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 260px;
+    padding: 0;
+}
+
+.top-header {
+    background-color: white;
+    height: 80px;
+    border-bottom: 1px solid #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.dashboard-container {
+    padding: 32px;
+}
+
+/* Card Styles */
+.eco-card {
+    background-color: white;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 24px;
+    height: 100%;
+}
+
+.card-title-sm {
+    font-size: 0.9rem;
+    color: #6C757D;
+    font-weight: 600;
+}
+
+.kpi-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.text-success-custom { color: #28A745; }
+.text-danger-custom { color: #DC3545; }
+
+/* Anomaly List */
+.anomaly-item {
+    background-color: #FEF2F2;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-left: 4px solid #DC3545;
+}
+
+.map-placeholder {
+    background-color: #E9ECEF;
+    border-radius: 8px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6C757D;
+}

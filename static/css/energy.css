@@ -1,0 +1,212 @@
+/* Energy Deep Dive - Specific Styles */
+
+.energy-container {
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Chart Card */
+.chart-card {
+    margin-bottom: 1.5rem;
+}
+
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.time-filter {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: white;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.time-filter:focus {
+    border-color: var(--primary-green);
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+/* Metrics Row - Horizontal Layout */
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Recommendations Section */
+.recommendations-section {
+    display: block;
+}
+
+.recommendations-section .content-card {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Metric Cards */
+.metric-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.success-bg {
+    background-color: #D4EDDA !important;
+    border-left: 4px solid var(--primary-green);
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-value-large {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.danger-text {
+    color: #DC3545 !important;
+}
+
+/* Recommendations */
+.recommendations-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.recommendation-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: #FFF9F0;
+    border-left: 4px solid #FFC107;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.recommendation-item:hover {
+    background-color: #FFF3E0;
+    transform: translateX(4px);
+}
+
+.rec-icon {
+    color: #FFC107;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Anomaly Highlighting (will be added via JS) */
+.anomaly-zone {
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 2px solid rgba(220, 53, 69, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .metrics-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .recommendations-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ─── Dark Mode Overrides ──────────────────────────────── */
+html[data-theme="dark"] .metric-card {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.45);
+}
+
+html[data-theme="dark"] .success-bg {
+    background-color: rgba(40,167,69,0.15) !important;
+}
+
+html[data-theme="dark"] .recommendation-item {
+    background-color: rgba(255,193,7,0.10);
+    border-left-color: #FFC107;
+}
+
+html[data-theme="dark"] .recommendation-item:hover {
+    background-color: rgba(255,193,7,0.18);
+}
+
+html[data-theme="dark"] .time-filter {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .time-filter.active {
+    background-color: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+@media (max-width: 768px) {
+    .energy-container {
+        padding: 1rem;
+    }
+    
+    .chart-container {
+        height: 300px;
+    }
+    
+    .metrics-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .recommendations-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .time-filter {
+        width: 100%;
+    }
+}
+}

@@ -1,0 +1,6 @@
+resource_type,unit,co2e_kg_per_unit,source
+Electricity,kWh,0.43,EPA eGRID
+Water,Gallon,0.00095,EPA Water
+Waste_Landfill,Lbs,0.544,EPA Waste
+Waste_Recycled,Lbs,-0.5,Avoided Emissions
+Gasoline,Gallon,8.887,EPA Mobile

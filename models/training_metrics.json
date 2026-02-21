@@ -1,0 +1,30 @@
+{
+  "energy": {
+    "model": "LSTM (keras)",
+    "mape": 18.26,
+    "mae": 1426.82,
+    "rmse": 1822.62,
+    "test_days": 61,
+    "backend": "keras",
+    "trained_at": "2026-02-21T06:40:05"
+  },
+  "waste": {
+    "model": "RandomForest",
+    "mape": 14.51,
+    "mae": 124.41,
+    "rmse": 181.07,
+    "test_days": 61,
+    "top_feature": "total_waste_lbs_lag_7d",
+    "trained_at": "2026-02-21T06:40:25"
+  },
+  "water": {
+    "model": "LSTM-Water (keras)",
+    "mape": 6.18,
+    "mae": 1032.93,
+    "rmse": 1575.19,
+    "test_days": 61,
+    "backend": "keras",
+    "trained_at": "2026-02-21T06:40:37"
+  },
+  "trained_at": "2026-02-21T06:40:37"
+}

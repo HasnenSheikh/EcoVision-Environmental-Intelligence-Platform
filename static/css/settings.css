@@ -1,0 +1,516 @@
+/* Platform Settings - Specific Styles */
+
+.settings-container {
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ─── Tabs ──────────────────────────────────────────────── */
+.settings-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0;
+}
+
+.settings-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 1.4rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 6px 6px 0 0;
+}
+
+.settings-tab:hover {
+    color: var(--primary-green);
+    background-color: #F0FAF2;
+}
+
+.settings-tab.active {
+    color: var(--primary-green);
+    border-bottom-color: var(--primary-green);
+    font-weight: 600;
+}
+
+.tab-icon {
+    font-size: 1.1rem;
+}
+
+/* ─── Settings Card ─────────────────────────────────────── */
+.settings-card {
+    max-width: 760px;
+}
+
+.settings-section-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-icon {
+    color: var(--primary-green);
+    font-size: 1.2rem;
+}
+
+/* ─── General Settings Rows ─────────────────────────────── */
+.settings-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid #F1F3F5;
+}
+
+.setting-row:last-child {
+    border-bottom: none;
+}
+
+.setting-info {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.setting-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+}
+
+.setting-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    inset: 0;
+    background-color: #CED4DA;
+    border-radius: 26px;
+    transition: background 0.2s;
+}
+
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background-color: var(--primary-green);
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+    transform: translateX(22px);
+}
+
+/* Select */
+.setting-select {
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: white;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    outline: none;
+    flex-shrink: 0;
+}
+
+.setting-select:focus {
+    border-color: var(--primary-green);
+}
+
+/* ─── Upload Rows ───────────────────────────────────────── */
+.upload-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.upload-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.upload-row:hover {
+    border-color: var(--primary-green);
+    background-color: #F8FFF9;
+}
+
+.upload-icon-wrap {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.energy-icon { background-color: #FFF3CD; color: #FFC107; }
+.water-icon  { background-color: #D0EBFF; color: #007BFF; }
+.waste-icon  { background-color: #D4EDDA; color: var(--primary-green); }
+.fuel-icon   { background-color: #FFE5D9; color: #E8501A; }
+
+.upload-info {
+    flex: 1;
+}
+
+.upload-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+}
+
+.upload-hint {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+}
+
+.upload-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.hidden-input {
+    display: none;
+}
+
+.choose-file-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 1rem;
+    background-color: #F1F3F5;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.choose-file-btn:hover {
+    background-color: #DEE2E6;
+}
+
+.choose-file-btn .material-icons {
+    font-size: 1rem;
+}
+
+.file-status {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-status.file-chosen {
+    color: var(--primary-green);
+    font-weight: 500;
+}
+
+/* ─── Import Button ─────────────────────────────────────── */
+.import-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    background-color: #1A2530;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.import-btn:hover {
+    background-color: #2C3E50;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(26,37,48,0.35);
+}
+
+/* Import feedback */
+.import-feedback {
+    margin-top: 1rem;
+    padding: 0.85rem 1.1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.import-feedback.success {
+    background-color: #D4EDDA;
+    color: #155724;
+    border-left: 4px solid var(--primary-green);
+}
+
+.import-feedback.error {
+    background-color: #F8D7DA;
+    color: #721C24;
+    border-left: 4px solid var(--alert-red);
+}
+
+/* ─── Save Button (General / Profile) ──────────────────── */
+.save-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.save-btn:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(40,167,69,0.4);
+}
+
+.settings-actions {
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ─── Profile Tab ───────────────────────────────────────── */
+.profile-avatar-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+    padding: 1.25rem;
+    background-color: #F8F9FA;
+    border-radius: 12px;
+}
+
+.profile-avatar {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.profile-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.profile-role {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.2rem;
+}
+
+.field-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid #F1F3F5;
+}
+
+.field-row:last-child {
+    border-bottom: none;
+}
+
+.field-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.field-input {
+    padding: 0.55rem 0.9rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.field-input:focus {
+    border-color: var(--primary-green);
+}
+
+.field-input[readonly] {
+    background-color: #F8F9FA;
+    color: var(--text-secondary);
+    cursor: not-allowed;
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .settings-container { padding: 1rem; }
+    .upload-row { flex-wrap: wrap; }
+    .upload-controls { width: 100%; justify-content: flex-start; }
+    .settings-tabs { overflow-x: auto; }
+    .settings-tab { white-space: nowrap; }
+}
+
+
+/* ── Dark Mode — settings page specifics ─────────────────── */
+
+html[data-theme="dark"] .settings-tabs {
+    border-bottom-color: var(--border-color);
+}
+
+html[data-theme="dark"] .settings-tab {
+    color: var(--text-secondary);
+}
+html[data-theme="dark"] .settings-tab:hover {
+    color: var(--primary-green);
+    background-color: rgba(40,167,69,0.08);
+}
+html[data-theme="dark"] .settings-tab.active {
+    color: var(--primary-green);
+    border-bottom-color: var(--primary-green);
+}
+
+html[data-theme="dark"] .settings-section-title {
+    color: var(--text-primary);
+    border-bottom-color: var(--border-color);
+}
+
+html[data-theme="dark"] .setting-row {
+    border-bottom-color: var(--border-color);
+}
+
+html[data-theme="dark"] .setting-select {
+    background-color: #1a2236;
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+html[data-theme="dark"] .setting-select:focus { border-color: var(--primary-green); }
+
+/* Toggle slider OFF colour in dark mode */
+html[data-theme="dark"] .toggle-slider {
+    background-color: #374151;
+}
+
+html[data-theme="dark"] .upload-row {
+    border-color: var(--border-color);
+    background-color: var(--card-bg);
+}
+html[data-theme="dark"] .upload-row:hover {
+    border-color: var(--primary-green);
+    background-color: rgba(40,167,69,0.07);
+}
+
+html[data-theme="dark"] .choose-file-btn {
+    background-color: #1a2236;
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+html[data-theme="dark"] .choose-file-btn:hover { background-color: #374151; }
+
+html[data-theme="dark"] .field-row { border-bottom-color: var(--border-color); }
+
+html[data-theme="dark"] .field-input {
+    background-color: #1a2236;
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+html[data-theme="dark"] .field-input:focus { border-color: var(--primary-green); }
+html[data-theme="dark"] .field-input[readonly] {
+    background-color: #1a2236;
+    color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .profile-avatar-row {
+    background-color: #1a2236;
+}
+
+html[data-theme="dark"] .settings-actions {
+    border-top-color: var(--border-color);
+}
+
+html[data-theme="dark"] .import-feedback.success {
+    background-color: rgba(40,167,69,0.12);
+    color: #6ee7b7;
+    border-left-color: var(--primary-green);
+}
+html[data-theme="dark"] .import-feedback.error {
+    background-color: rgba(220,53,69,0.12);
+    color: #fca5a5;
+    border-left-color: var(--alert-red);
+}
