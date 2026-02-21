@@ -12,8 +12,6 @@ services:
         generateValue: true          # Render auto-generates a secure random value
       - key: FLASK_ENV
         value: production
-      - key: PYTHON_VERSION
-        value: 3.12.8
 
     # Persistent disk keeps SQLite DB and model files across deploys.
     # Remove this block if you are on the free tier (no persistent disk).
