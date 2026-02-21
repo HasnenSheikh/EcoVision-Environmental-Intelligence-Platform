@@ -13,7 +13,7 @@ services:
       - key: FLASK_ENV
         value: production
       - key: PYTHON_VERSION
-        value: 3.11.9
+        value: 3.12.3
 
     # Persistent disk keeps SQLite DB and model files across deploys.
     # Remove this block if you are on the free tier (no persistent disk).

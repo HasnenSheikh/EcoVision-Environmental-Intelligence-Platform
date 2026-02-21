@@ -21,23 +21,10 @@ pip install -r requirements.txt
 echo "[3/3] Preparing runtime directories..."
 mkdir -p data models
 
-# ── 4. Train models only when pkl files are missing ─────────
-MODELS_NEEDED=false
-for f in "models/energy_lstm.pkl" "models/waste_rf.pkl" "models/water_lstm.pkl"; do
-  if [ ! -f "$f" ]; then
-    MODELS_NEEDED=true
-    echo "  Missing: $f"
-  fi
-done
-
-if [ "$MODELS_NEEDED" = true ]; then
-  echo ""
-  echo ">>> Pre-trained models not found – running train_models.py"
-  echo "    (This takes ~3-5 minutes on first deploy)"
-  python train_models.py
-else
-  echo "  Pre-trained models found – skipping training."
-fi
+# ── 4. Train models (always run to match installed TF version) ───────────────
+echo "[4/4] Training ML models (LSTM + Random Forest)..."
+echo "      This takes ~3-5 minutes on first deploy..."
+python train_models.py
 
 echo ""
 echo "========================================================"

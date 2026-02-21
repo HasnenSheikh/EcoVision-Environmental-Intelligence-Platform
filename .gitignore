@@ -49,6 +49,9 @@ Thumbs.db
 # Virtual environments
 .venv/
 
+# Trained model artifacts (rebuilt by Render on deploy)
+models/*.pkl
+
 # Large binaries
 data.zip
 
